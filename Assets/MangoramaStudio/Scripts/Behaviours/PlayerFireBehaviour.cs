@@ -5,14 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerThrowBehaviour : MonoBehaviour
+public class PlayerFireBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform _barrelPoint;
-    [SerializeField] private GameObject _objectToThrowPrefab;
+    [SerializeField] private GameObject _objectToFirePrefab;
     [SerializeField] private float _speedFactor;
-    [SerializeField] private float _rangeOfThrowingOnZAxis;
     [SerializeField] private float _arriveTimeOfThrow;
-    [SerializeField] private float _destroyTimeOfObjectToThrow;
+    [SerializeField] private float _destroyTimeOfObjectToFire;
 
     private void Start()
     {
@@ -20,11 +19,11 @@ public class PlayerThrowBehaviour : MonoBehaviour
     }
 
     [Button]
-    private void ObjectThrowProcess()
+    private void FireProcess()
     {
-        var objectToThrow = Instantiate(_objectToThrowPrefab, _barrelPoint);
-        objectToThrow.transform.DOMoveZ(_barrelPoint.transform.position.z + _rangeOfThrowingOnZAxis, _arriveTimeOfThrow);
-        Destroy(objectToThrow, _destroyTimeOfObjectToThrow);
+        var objectToThrow = Instantiate(_objectToFirePrefab, _barrelPoint);
+        objectToThrow.transform.DOMoveZ(_barrelPoint.transform.position.z + PlayerData.Range, _arriveTimeOfThrow);
+        Destroy(objectToThrow, _destroyTimeOfObjectToFire);
     }
 
     private IEnumerator FireRateCo()
@@ -32,7 +31,7 @@ public class PlayerThrowBehaviour : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(5f / PlayerData.FireRate);
-            ObjectThrowProcess();
+            FireProcess();
         }
     }
 }
