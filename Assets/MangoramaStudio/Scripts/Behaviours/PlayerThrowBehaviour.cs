@@ -1,4 +1,5 @@
 using DG.Tweening;
+using MangoramaStudio.Scripts.Data;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,16 +8,31 @@ using UnityEngine;
 public class PlayerThrowBehaviour : MonoBehaviour
 {
     [SerializeField] private Transform _barrelPoint;
-    [SerializeField] private GameObject _objectToThrow;
-    [SerializeField] private float _destroyTimeOfObjectToThrow; //objenin katettiði mesafe buradan manipüle edilecek
-    [SerializeField] private float _rangeOfThrowingOnZAxis; //objenin ne kadar uzaða fýrlatýldýðý buradan manipüle edilecek
-    [SerializeField] private float _arriveTimeOfThrow;  //objenin fýrlatýlma hýzý buradan manipüle edilecek(ters mantýk)
+    [SerializeField] private GameObject _objectToThrowPrefab;
+    [SerializeField] private float _speedFactor;
+    [SerializeField] private float _rangeOfThrowingOnZAxis;
+    [SerializeField] private float _arriveTimeOfThrow;
+    [SerializeField] private float _destroyTimeOfObjectToThrow;
+
+    private void Start()
+    {
+        StartCoroutine(FireRateCo());
+    }
 
     [Button]
     private void ObjectThrowProcess()
     {
-        var objectToThrow = Instantiate(_objectToThrow, _barrelPoint);
+        var objectToThrow = Instantiate(_objectToThrowPrefab, _barrelPoint);
         objectToThrow.transform.DOMoveZ(_rangeOfThrowingOnZAxis, _arriveTimeOfThrow);
         Destroy(objectToThrow, _destroyTimeOfObjectToThrow);
+    }
+
+    private IEnumerator FireRateCo()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f / PlayerData.FireRate);
+            ObjectThrowProcess();
+        }
     }
 }
