@@ -27,6 +27,16 @@ namespace MangoramaStudio.Scripts.Data
             }
         }
 
+        public static int Range
+        {
+            get => PlayerPrefs.GetInt("Range", 50);
+
+            set
+            {
+                PlayerPrefs.SetInt("Range", value);
+            }
+        }
+
         public static int IsMusicEnabled
         {
             get => PlayerPrefs.GetInt("IsMusicEnabled", 1);
