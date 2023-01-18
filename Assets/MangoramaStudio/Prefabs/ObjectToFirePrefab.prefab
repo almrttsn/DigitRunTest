@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3996959219986564289}
   - component: {fileID: 3996959219986564294}
   m_Layer: 0
-  m_Name: ObjectToThrowPrefab
-  m_TagString: Untagged
+  m_Name: ObjectToFirePrefab
+  m_TagString: ObjectToFire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
