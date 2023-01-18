@@ -23,7 +23,7 @@ public class PlayerThrowBehaviour : MonoBehaviour
     private void ObjectThrowProcess()
     {
         var objectToThrow = Instantiate(_objectToThrowPrefab, _barrelPoint);
-        objectToThrow.transform.DOMoveZ(_rangeOfThrowingOnZAxis, _arriveTimeOfThrow);
+        objectToThrow.transform.DOMoveZ(_barrelPoint.transform.position.z + _rangeOfThrowingOnZAxis, _arriveTimeOfThrow);
         Destroy(objectToThrow, _destroyTimeOfObjectToThrow);
     }
 
