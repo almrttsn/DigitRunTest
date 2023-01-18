@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42145bd3ccdd4e64095782e46ca63e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSpeed: 1
+  _playerSpeed: 2
 --- !u!114 &1032350397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,11 +580,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _barrelPoint: {fileID: 2115475063}
-  _objectToThrow: {fileID: 3996959219986564292, guid: 7f0b0e26ca86679459aa1994376b27bc,
+  _objectToThrowPrefab: {fileID: 3996959219986564292, guid: 7f0b0e26ca86679459aa1994376b27bc,
     type: 3}
-  _destroyTimeOfObjectToThrow: 2
+  _speedFactor: 1
   _rangeOfThrowingOnZAxis: 50
   _arriveTimeOfThrow: 1
+  _destroyTimeOfObjectToThrow: 1
 --- !u!1 &1497053465
 GameObject:
   m_ObjectHideFlags: 0
