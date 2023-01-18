@@ -17,6 +17,16 @@ namespace MangoramaStudio.Scripts.Data
             }
         }
 
+        public static int FireRate
+        {
+            get => PlayerPrefs.GetInt("FireRate", 5);
+
+            set
+            {
+                PlayerPrefs.SetInt("FireRate", value);
+            }
+        }
+
         public static int IsMusicEnabled
         {
             get => PlayerPrefs.GetInt("IsMusicEnabled", 1);
