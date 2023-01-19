@@ -36,6 +36,7 @@ public class PlayerDetectorBehaviour : MonoBehaviour
     {
         _moneyEarned = money;
         PlayerData.Money += _moneyEarned;
+        _playerController.PlayerMoneyDisplayBehaviour.PlayerMoneyDisplayText.text = PlayerData.Money.ToString();
     }
 
     

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerMoneyDisplayBehaviour : MonoBehaviour
 {
+    public TextMesh PlayerMoneyDisplayText => _playerMoneyDisplayText;
     [SerializeField] private TextMesh _playerMoneyDisplayText;
     private PlayerController _playerController;
 
@@ -17,7 +18,7 @@ public class PlayerMoneyDisplayBehaviour : MonoBehaviour
 
     private void Update()
     {
-        _playerMoneyDisplayText.text = PlayerData.Money.ToString();
+        //_playerMoneyDisplayText.text = PlayerData.Money.ToString();
     }
 
 }
