@@ -6,15 +6,39 @@ using UnityEngine.UI;
 
 public class PlayerDetectorBehaviour : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private int _moneyEarned;
+    private int _fireRate;
+    private int _range;
+
+    private void Start()
     {
-        if(other.tag == "Range" && gameObject.tag == "Player")
-        {
-            Debug.Log("Range is: " + PlayerData.Range);
-        }
-        else if(other.tag == "FireRate" && gameObject.tag == "Player")
-        {
-            Debug.Log("Fire rate is: " + PlayerData.FireRate);
-        }
+        MoneyBehaviour.PlayerEarnMoney += IsPlayerEarnMoney;
+        FireRateGateScoreBehaviour.FireRateUpdated += IsFireRateUpdated;
+        RangeGateScoreBehaviour.RangeUpdated += IsRangeUpdated;
+    }
+
+    private void IsRangeUpdated(int range)
+    {
+        _range = range;
+        PlayerData.Range += _range;
+    }
+
+    private void IsFireRateUpdated(int fireRate)
+    {
+        _fireRate = fireRate;
+        PlayerData.FireRate += _fireRate;
+    }
+
+    private void IsPlayerEarnMoney(int money)
+    {
+        _moneyEarned = money;
+        PlayerData.Money += _moneyEarned;
+    }
+
+    private void OnDestroy()
+    {
+        MoneyBehaviour.PlayerEarnMoney -= IsPlayerEarnMoney;
+        FireRateGateScoreBehaviour.FireRateUpdated -= IsFireRateUpdated;
+        RangeGateScoreBehaviour.RangeUpdated -= IsRangeUpdated;
     }
 }

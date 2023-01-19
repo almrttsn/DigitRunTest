@@ -29,7 +29,7 @@ public class PlayerFireBehaviour : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(10f / PlayerData.FireRate);
+            yield return new WaitForSeconds(5f / PlayerData.FireRate);
             FireProcess();
         }
     }
