@@ -12,17 +12,20 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
 
     private void Start()
     {
-        PlayerData.FireRate = _initialFireRateScore;
-        _fireRateText.text = ("Fire rate: " + PlayerData.FireRate);
-        PlayerData.FireRate = _currentFireRate;
+        _fireRateText.text = ("Fire rate: " + _initialFireRateScore);
+        _currentFireRate = _initialFireRateScore;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ObjectToFire")
+        if (other.tag == "Bullet")
         {
             _currentFireRate++;
             _fireRateText.text = ("Fire rate: " + _currentFireRate);
+        }
+        else if (other.tag == "Player")
+        {
+            PlayerData.FireRate += _currentFireRate; ;
         }
     }
 }

@@ -12,17 +12,20 @@ public class RangeGateScoreBehaviour : MonoBehaviour
 
     private void Start()
     {
-        PlayerData.Range = _intialRangeScore;
-        _rangeText.text = ("Range: " + PlayerData.Range);
-        PlayerData.Range = _currentRange;
+        _rangeText.text = ("Range: " + _intialRangeScore);
+        _currentRange = _intialRangeScore;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "ObjectToFire")
+        if (other.tag == "Bullet")
         {
             _currentRange++;
             _rangeText.text = ("Range: " + _currentRange);
+        }
+        else if(other.tag == "Player")
+        {
+            PlayerData.Range += _currentRange;
         }
     }
 }
