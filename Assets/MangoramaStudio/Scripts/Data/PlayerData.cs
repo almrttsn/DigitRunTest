@@ -27,6 +27,16 @@ namespace MangoramaStudio.Scripts.Data
             }
         }
 
+        public static int Money
+        {
+            get => PlayerPrefs.GetInt("Money", 0);
+
+            set
+            {
+                PlayerPrefs.SetInt("Money", value);
+            }
+        }
+
         public static int Range
         {
             get => PlayerPrefs.GetInt("Range", 50);
