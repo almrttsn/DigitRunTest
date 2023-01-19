@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25ba2adcdc811c46a7e2974c4786f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intialRangeScore: 50
+  _intialRangeScore: 20
   _rangeText: {fileID: 513908707}
 --- !u!23 &269710
 MeshRenderer:
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1911492324c8547a183cb87f0c952c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialFireRateScore: 5
+  _initialFireRateScore: 2
   _fireRateText: {fileID: 730810619}
 --- !u!23 &386704866
 MeshRenderer:
@@ -631,7 +631,7 @@ TextMesh:
   m_GameObject: {fileID: 513908705}
   m_Text: 
   m_OffsetZ: 0
-  m_CharacterSize: 0.15
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
@@ -639,7 +639,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: db8aec58b7ce99443a1c4f5cd4d9e408, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -662,7 +662,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: db8aec58b7ce99443a1c4f5cd4d9e408, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -821,7 +821,7 @@ TextMesh:
   m_GameObject: {fileID: 730810617}
   m_Text: 
   m_OffsetZ: 0
-  m_CharacterSize: 0.15
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
@@ -829,7 +829,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: db8aec58b7ce99443a1c4f5cd4d9e408, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -852,7 +852,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: db8aec58b7ce99443a1c4f5cd4d9e408, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1096,11 +1096,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _barrelPoint: {fileID: 2115475063}
-  _objectToFirePrefab: {fileID: 3996959219986564292, guid: 7f0b0e26ca86679459aa1994376b27bc,
+  _bulletPrefab: {fileID: 3881850198340372598, guid: 7f0b0e26ca86679459aa1994376b27bc,
     type: 3}
-  _speedFactor: 1
-  _arriveTimeOfThrow: 1
-  _destroyTimeOfObjectToFire: 1
+  _initialBulletSpeed: 50
 --- !u!54 &1032350398
 Rigidbody:
   m_ObjectHideFlags: 0
