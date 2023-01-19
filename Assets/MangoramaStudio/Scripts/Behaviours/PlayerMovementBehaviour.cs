@@ -6,9 +6,11 @@ using UnityEngine;
 public class PlayerMovementBehaviour : MonoBehaviour
 {
     [SerializeField] private float _playerSpeed;
+    private PlayerController _playerController;
 
-    private void Start()
+    public void Initialize(PlayerController playerController)
     {
+        _playerController = playerController;
         InputController.OnDrag += Dragged;
     }
 
@@ -21,4 +23,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
     {
         transform.position += new Vector3(dragVector.x * 100f, 0, 0) * Time.deltaTime;
     }
+
+
 }

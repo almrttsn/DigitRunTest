@@ -1,4 +1,5 @@
 using MangoramaStudio.Scripts.Data;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,12 +7,14 @@ using UnityEngine.UI;
 
 public class PlayerDetectorBehaviour : MonoBehaviour
 {
+    private PlayerController _playerController;
     private int _moneyEarned;
     private int _fireRate;
     private int _range;
 
-    private void Start()
+    public void Initialize(PlayerController playerController)
     {
+        _playerController = playerController;
         MoneyBehaviour.PlayerEarnMoney += IsPlayerEarnMoney;
         FireRateGateScoreBehaviour.FireRateUpdated += IsFireRateUpdated;
         RangeGateScoreBehaviour.RangeUpdated += IsRangeUpdated;
@@ -34,6 +37,8 @@ public class PlayerDetectorBehaviour : MonoBehaviour
         _moneyEarned = money;
         PlayerData.Money += _moneyEarned;
     }
+
+    
 
     private void OnDestroy()
     {

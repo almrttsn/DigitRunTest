@@ -1,6 +1,7 @@
 using DG.Tweening;
 using MangoramaStudio.Scripts.Data;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,12 @@ public class PlayerFireBehaviour : MonoBehaviour
     [SerializeField] private Transform _barrelPoint;
     [SerializeField] private BulletBehaviour _bulletPrefab;
     [SerializeField] private float _initialBulletSpeed;
+    private PlayerController _playerController;
 
-    private void Start()
+
+    public void Initialize(PlayerController playerController)
     {
+        _playerController = playerController;
         StartCoroutine(FireRateCo());
     }
 
@@ -33,4 +37,6 @@ public class PlayerFireBehaviour : MonoBehaviour
             FireProcess();
         }
     }
+
+    
 }
