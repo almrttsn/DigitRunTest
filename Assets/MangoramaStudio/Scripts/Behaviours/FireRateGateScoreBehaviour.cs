@@ -25,7 +25,8 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
         }
         else if (other.tag == "Player")
         {
-            PlayerData.FireRate += _currentFireRate; ;
+            PlayerData.FireRate += _currentFireRate;
+            Destroy(gameObject);
         }
     }
 }

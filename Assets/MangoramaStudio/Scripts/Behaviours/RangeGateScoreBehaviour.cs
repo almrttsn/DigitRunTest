@@ -26,6 +26,7 @@ public class RangeGateScoreBehaviour : MonoBehaviour
         else if(other.tag == "Player")
         {
             PlayerData.Range += _currentRange;
+            Destroy(gameObject);
         }
     }
 }
