@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Range
   - FireRate
-  - ObjectToFire
+  - Bullet
   layers:
   - Default
   - TransparentFX
