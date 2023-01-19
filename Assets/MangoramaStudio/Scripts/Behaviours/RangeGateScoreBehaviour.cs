@@ -1,4 +1,5 @@
 using MangoramaStudio.Scripts.Data;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class RangeGateScoreBehaviour : MonoBehaviour
 {
+    public static event Action<int> RangeUpdated;
     [SerializeField] private int _intialRangeScore;
     [SerializeField] private TextMesh _rangeText;
     private int _currentRange;
@@ -22,10 +24,11 @@ public class RangeGateScoreBehaviour : MonoBehaviour
         {
             _currentRange++;
             _rangeText.text = ("Range: " + _currentRange);
+            Destroy(other.gameObject);
         }
         else if(other.tag == "Player")
         {
-            PlayerData.Range += _currentRange;
+            RangeUpdated?.Invoke(_currentRange);
             Destroy(gameObject);
         }
     }

@@ -1,4 +1,5 @@
 using MangoramaStudio.Scripts.Data;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.UI;
 
 public class FireRateGateScoreBehaviour : MonoBehaviour
 {
+    public static event Action<int> FireRateUpdated;
     [SerializeField] private int _initialFireRateScore;
     [SerializeField] private TextMesh _fireRateText;
     private int _currentFireRate;
@@ -22,10 +24,11 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
         {
             _currentFireRate++;
             _fireRateText.text = ("Fire rate: " + _currentFireRate);
+            Destroy(other.gameObject);
         }
         else if (other.tag == "Player")
         {
-            PlayerData.FireRate += _currentFireRate;
+            FireRateUpdated?.Invoke(_currentFireRate);
             Destroy(gameObject);
         }
     }
