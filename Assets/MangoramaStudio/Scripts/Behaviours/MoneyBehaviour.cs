@@ -20,7 +20,7 @@ public class MoneyBehaviour : MonoBehaviour
         {
             _moneyText.color = Color.red;
         }
-        _moneyText.text = (_initialMoneyAmount.ToString());
+        _moneyText.text = (_initialMoneyAmount.ToString() + "$");
         _currentMoneyAmount = _initialMoneyAmount;
     }
 
@@ -29,7 +29,7 @@ public class MoneyBehaviour : MonoBehaviour
         if (other.tag == "Bullet")
         {
             _currentMoneyAmount++;
-            _moneyText.text = ( _currentMoneyAmount.ToString());
+            _moneyText.text = ( _currentMoneyAmount.ToString() + "$");
             Destroy(other.gameObject);
             if(_currentMoneyAmount >= 0)
             {

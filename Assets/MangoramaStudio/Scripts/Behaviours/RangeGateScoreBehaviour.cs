@@ -15,7 +15,7 @@ public class RangeGateScoreBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _rangeText.text = ("Range:" + _intialRangeScore);
+        _rangeText.text = ("Range:" + _intialRangeScore + "$");
         _meshRenderer = GetComponent<MeshRenderer>();
         if(_intialRangeScore >= 0)
         {
@@ -33,7 +33,7 @@ public class RangeGateScoreBehaviour : MonoBehaviour
         if (other.tag == "Bullet")
         {
             _currentRange++;
-            _rangeText.text = ("Range:" + _currentRange);
+            _rangeText.text = ("Range:" + _currentRange + "$");
             Destroy(other.gameObject);
             if (_currentRange >= 0)
             {

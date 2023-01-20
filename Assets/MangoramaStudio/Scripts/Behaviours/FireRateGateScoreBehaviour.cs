@@ -15,7 +15,7 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _fireRateText.text = ("Fire rate:" + _initialFireRateScore);
+        _fireRateText.text = ("Fire rate:" + _initialFireRateScore + "$");
         _meshRenderer = GetComponent<MeshRenderer>();
         if (_initialFireRateScore >= 0)
         {
@@ -33,7 +33,7 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
         if (other.tag == "Bullet")
         {
             _currentFireRate++;
-            _fireRateText.text = ("Fire rate:" + _currentFireRate);
+            _fireRateText.text = ("Fire rate:" + _currentFireRate + "$");
             Destroy(other.gameObject);
             if (_currentFireRate >= 0)
             {

@@ -39,7 +39,7 @@ public class PlayerDetectorBehaviour : MonoBehaviour
     {
         _moneyEarned = money;
         PlayerData.Money += _moneyEarned;
-        _playerController.PlayerMoneyDisplayBehaviour.PlayerMoneyDisplayText.text = PlayerData.Money.ToString();
+        _playerController.PlayerMoneyDisplayBehaviour.PlayerMoneyDisplayText.text = (PlayerData.Money.ToString() + "$");
         if(PlayerData.Money >= 0)
         {
             _playerController.PlayerMoneyDisplayBehaviour.PlayerMoneyDisplayText.color = Color.green; 
