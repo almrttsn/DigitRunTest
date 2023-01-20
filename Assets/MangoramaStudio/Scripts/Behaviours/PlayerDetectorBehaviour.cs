@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerDetectorBehaviour : MonoBehaviour
 {
+    [SerializeField] private Animator _playerAnimator;
     private PlayerController _playerController;
     private int _moneyEarned;
     private int _fireRate;
@@ -24,12 +25,14 @@ public class PlayerDetectorBehaviour : MonoBehaviour
     {
         _range = range;
         PlayerData.Range += _range;
+        StartCoroutine(PlayerTurnAnimCo());
     }
 
     private void IsFireRateUpdated(int fireRate)
     {
         _fireRate = fireRate;
         PlayerData.FireRate += _fireRate;
+        StartCoroutine(PlayerTurnAnimCo());
     }
 
     private void IsPlayerEarnMoney(int money)
@@ -45,9 +48,17 @@ public class PlayerDetectorBehaviour : MonoBehaviour
         {
             _playerController.PlayerMoneyDisplayBehaviour.PlayerMoneyDisplayText.color = Color.red;
         }
+        StartCoroutine(PlayerTurnAnimCo());
     }
 
-    
+    private IEnumerator PlayerTurnAnimCo()
+    {
+        _playerAnimator.enabled = true;
+        yield return new WaitForSeconds(0.5f);
+        _playerAnimator.enabled = false;
+    }
+
+
 
     private void OnDestroy()
     {
