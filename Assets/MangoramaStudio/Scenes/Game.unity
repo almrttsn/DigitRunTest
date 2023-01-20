@@ -657,7 +657,7 @@ PrefabInstance:
     - target: {fileID: 5487937770038208526, guid: de81f76b413f42547a7fde996c002210,
         type: 3}
       propertyPath: _intialRangeScore
-      value: -2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5487937770038208527, guid: de81f76b413f42547a7fde996c002210,
         type: 3}
@@ -2117,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 5487937770038208526, guid: de81f76b413f42547a7fde996c002210,
         type: 3}
       propertyPath: _intialRangeScore
-      value: 3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5487937770038208527, guid: de81f76b413f42547a7fde996c002210,
         type: 3}
