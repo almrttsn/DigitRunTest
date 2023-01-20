@@ -11,10 +11,20 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
     [SerializeField] private int _initialFireRateScore;
     [SerializeField] private TextMesh _fireRateText;
     private int _currentFireRate;
+    private MeshRenderer _meshRenderer;
 
     private void Start()
     {
         _fireRateText.text = ("Fire rate: " + _initialFireRateScore);
+        _meshRenderer = GetComponent<MeshRenderer>();
+        if (_initialFireRateScore >= 0)
+        {
+            _meshRenderer.material.color = Color.green;
+        }
+        else
+        {
+            _meshRenderer.material.color = Color.red;
+        }
         _currentFireRate = _initialFireRateScore;
     }
 
@@ -25,6 +35,14 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
             _currentFireRate++;
             _fireRateText.text = ("Fire rate: " + _currentFireRate);
             Destroy(other.gameObject);
+            if (_currentFireRate >= 0)
+            {
+                _meshRenderer.material.color = Color.green;
+            }
+            else
+            {
+                _meshRenderer.material.color = Color.red;
+            }
         }
         else if (other.tag == "Player")
         {

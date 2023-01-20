@@ -11,10 +11,20 @@ public class RangeGateScoreBehaviour : MonoBehaviour
     [SerializeField] private int _intialRangeScore;
     [SerializeField] private TextMesh _rangeText;
     private int _currentRange;
+    private MeshRenderer _meshRenderer;
 
     private void Start()
     {
         _rangeText.text = ("Range: " + _intialRangeScore);
+        _meshRenderer = GetComponent<MeshRenderer>();
+        if(_intialRangeScore >= 0)
+        {
+            _meshRenderer.material.color = Color.green;
+        }
+        else
+        {
+            _meshRenderer.material.color = Color.red;
+        }
         _currentRange = _intialRangeScore;
     }
 
@@ -25,6 +35,14 @@ public class RangeGateScoreBehaviour : MonoBehaviour
             _currentRange++;
             _rangeText.text = ("Range: " + _currentRange);
             Destroy(other.gameObject);
+            if (_currentRange >= 0)
+            {
+                _meshRenderer.material.color = Color.green;
+            }
+            else
+            {
+                _meshRenderer.material.color = Color.red;
+            }
         }
         else if(other.tag == "Player")
         {
