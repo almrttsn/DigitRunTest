@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25ba2adcdc811c46a7e2974c4786f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _intialRangeScore: 20
+  _intialRangeScore: -1
   _rangeText: {fileID: 513908707}
 --- !u!23 &269710
 MeshRenderer:
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1911492324c8547a183cb87f0c952c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialFireRateScore: 2
+  _initialFireRateScore: -1
   _fireRateText: {fileID: 730810619}
 --- !u!23 &386704866
 MeshRenderer:
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248ef16b017277340a60a2af5851f3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialMoneyAmount: 0
+  _initialMoneyAmount: -1
   _moneyText: {fileID: 2121346531}
 --- !u!850595691 &1849001023
 LightingSettings:

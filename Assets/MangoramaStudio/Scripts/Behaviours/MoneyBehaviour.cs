@@ -12,6 +12,14 @@ public class MoneyBehaviour : MonoBehaviour
 
     private void Start()
     {
+        if (_initialMoneyAmount >= 0)
+        {
+            _moneyText.color = Color.green;
+        }
+        else
+        {
+            _moneyText.color = Color.red;
+        }
         _moneyText.text = (_initialMoneyAmount.ToString());
         _currentMoneyAmount = _initialMoneyAmount;
     }
@@ -23,6 +31,14 @@ public class MoneyBehaviour : MonoBehaviour
             _currentMoneyAmount++;
             _moneyText.text = ( _currentMoneyAmount.ToString());
             Destroy(other.gameObject);
+            if(_currentMoneyAmount >= 0)
+            {
+                _moneyText.color = Color.green;
+            }
+            else
+            {
+                _moneyText.color = Color.red;
+            }
         }
         else if (other.tag == "Player")
         {
