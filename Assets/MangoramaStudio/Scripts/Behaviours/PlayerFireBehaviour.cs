@@ -23,7 +23,7 @@ public class PlayerFireBehaviour : MonoBehaviour
     [Button]
     private void FireProcess()
     {
-        var bullet = Instantiate(_bulletPrefab,_barrelPoint.transform.position,_barrelPoint.transform.rotation);
+        var bullet = Instantiate(_bulletPrefab,_barrelPoint.transform.position,Quaternion.identity);
         bullet.Initialize(_initialBulletSpeed);
         //objectToThrow.transform.DOMoveZ(_barrelPoint.transform.position.z + PlayerData.Range, _arriveTimeOfThrow);
         Destroy(bullet.gameObject, 1f);
