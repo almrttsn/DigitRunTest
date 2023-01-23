@@ -17,6 +17,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     private void Update()
     {
         transform.position += new Vector3(0, 0, _playerSpeed) * Time.deltaTime;
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -2.5f, 2.5f), transform.position.y, transform.position.z);
     }
 
     private void Dragged(Vector2 dragVector)
