@@ -19,6 +19,12 @@ public class PlayerDetectorBehaviour : MonoBehaviour
         MoneyBehaviour.PlayerEarnMoney += IsPlayerEarnMoney;
         FireRateGateScoreBehaviour.FireRateUpdated += IsFireRateUpdated;
         RangeGateScoreBehaviour.RangeUpdated += IsRangeUpdated;
+        EndTriggerBehaviour.PlayerReachedEndTrigger += IsPlayerReachedEndTrigger;
+    }
+
+    private void IsPlayerReachedEndTrigger()
+    {
+        _playerController.PlayerFireBehaviour.PlayerAllowedToFire = false;
     }
 
     private void IsRangeUpdated(int range)

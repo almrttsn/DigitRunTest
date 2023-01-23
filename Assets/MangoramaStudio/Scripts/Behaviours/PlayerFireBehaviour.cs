@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class PlayerFireBehaviour : MonoBehaviour
 {
+    public bool PlayerAllowedToFire {get;set;}
     [SerializeField] private Transform _barrelPoint;
     [SerializeField] private BulletBehaviour _bulletPrefab;
     [SerializeField] private float _initialBulletSpeed;
@@ -16,6 +17,7 @@ public class PlayerFireBehaviour : MonoBehaviour
     public void Initialize(PlayerController playerController)
     {
         _playerController = playerController;
+        PlayerAllowedToFire = true;
         StartCoroutine(FireRateCo());
     }
 
@@ -30,7 +32,7 @@ public class PlayerFireBehaviour : MonoBehaviour
 
     private IEnumerator FireRateCo()
     {
-        while (true)
+        while (PlayerAllowedToFire)
         {
             yield return new WaitForSeconds(5f / PlayerData.FireRate);
             FireProcess();
