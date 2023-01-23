@@ -15,14 +15,15 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
 
     private void Start()
     {
-        _fireRateText.text = ("Fire rate:" + _initialFireRateScore + "$");
         _meshRenderer = GetComponent<MeshRenderer>();
         if (_initialFireRateScore >= 0)
         {
+            _fireRateText.text = ("+" + _initialFireRateScore + "$");
             _meshRenderer.material.color = Color.green;
         }
         else
         {
+            _fireRateText.text = (_initialFireRateScore + "$");
             _meshRenderer.material.color = Color.red;
         }
         _currentFireRate = _initialFireRateScore;
@@ -33,14 +34,15 @@ public class FireRateGateScoreBehaviour : MonoBehaviour
         if (other.tag == "Bullet")
         {
             _currentFireRate++;
-            _fireRateText.text = ("Fire rate:" + _currentFireRate + "$");
             Destroy(other.gameObject);
             if (_currentFireRate >= 0)
             {
+                _fireRateText.text = ("+" + _currentFireRate + "$");
                 _meshRenderer.material.color = Color.green;
             }
             else
             {
+                _fireRateText.text = (_currentFireRate + "$");
                 _meshRenderer.material.color = Color.red;
             }
         }
