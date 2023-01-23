@@ -58,8 +58,6 @@ public class PlayerDetectorBehaviour : MonoBehaviour
         _playerAnimator.enabled = false;
     }
 
-
-
     private void OnDestroy()
     {
         MoneyBehaviour.PlayerEarnMoney -= IsPlayerEarnMoney;

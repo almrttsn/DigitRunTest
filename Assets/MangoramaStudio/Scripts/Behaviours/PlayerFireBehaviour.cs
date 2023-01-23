@@ -13,7 +13,6 @@ public class PlayerFireBehaviour : MonoBehaviour
     [SerializeField] private float _initialBulletSpeed;
     private PlayerController _playerController;
 
-
     public void Initialize(PlayerController playerController)
     {
         _playerController = playerController;
@@ -37,6 +36,4 @@ public class PlayerFireBehaviour : MonoBehaviour
             FireProcess();
         }
     }
-
-    
 }

@@ -10,7 +10,6 @@ public class PlayerMoneyDisplayBehaviour : MonoBehaviour
     [SerializeField] private TextMesh _playerMoneyDisplayText;
     private PlayerController _playerController;
 
-
     public void Initialize(PlayerController playerController)
     {
         _playerController = playerController;

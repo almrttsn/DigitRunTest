@@ -23,6 +23,4 @@ public class PlayerMovementBehaviour : MonoBehaviour
     {
         transform.position += new Vector3(dragVector.x * 100f, 0, 0) * Time.deltaTime;
     }
-
-
 }
