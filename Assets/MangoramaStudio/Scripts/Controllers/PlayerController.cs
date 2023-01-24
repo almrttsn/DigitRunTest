@@ -19,6 +19,6 @@ public class PlayerController : MonoBehaviour
         PlayerDetectorBehaviour.Initialize(this);
         PlayerFireBehaviour.Initialize(this);
         PlayerMoneyDisplayBehaviour.Initialize(this);
-        PlayerMovementBehaviour.Initialize(this);
+        PlayerMovementBehaviour.Initialize(this);        
     }
 }
