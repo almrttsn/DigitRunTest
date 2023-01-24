@@ -7,7 +7,9 @@ using UnityEngine;
 public class PlayerMoneyDisplayBehaviour : MonoBehaviour
 {
     public TextMesh PlayerMoneyDisplayText => _playerMoneyDisplayText;
+
     [SerializeField] private TextMesh _playerMoneyDisplayText;
+
     private PlayerController _playerController;
 
     public void Initialize(PlayerController playerController)

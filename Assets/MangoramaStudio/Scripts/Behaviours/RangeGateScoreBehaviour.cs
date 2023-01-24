@@ -8,15 +8,17 @@ using UnityEngine.UI;
 public class RangeGateScoreBehaviour : MonoBehaviour
 {
     public static event Action<int> RangeUpdated;
+
     [SerializeField] private int _intialRangeScore;
     [SerializeField] private TextMesh _rangeText;
+
     private int _currentRange;
     private MeshRenderer _meshRenderer;
 
-    private void Start()
+    public void Initialize(InteractObjectsController interactObjectsController)
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-        if(_intialRangeScore >= 0)
+        if (_intialRangeScore >= 0)
         {
             _rangeText.text = ("+" + _intialRangeScore + "$");
             _meshRenderer.material.color = Color.green;
@@ -52,4 +54,5 @@ public class RangeGateScoreBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

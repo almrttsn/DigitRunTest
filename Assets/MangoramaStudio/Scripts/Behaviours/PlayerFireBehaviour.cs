@@ -9,9 +9,11 @@ using UnityEngine;
 public class PlayerFireBehaviour : MonoBehaviour
 {
     public bool PlayerAllowedToFire {get;set;}
+
     [SerializeField] private Transform _barrelPoint;
     [SerializeField] private BulletBehaviour _bulletPrefab;
     [SerializeField] private float _initialBulletSpeed;
+
     private PlayerController _playerController;
 
     public void Initialize(PlayerController playerController)

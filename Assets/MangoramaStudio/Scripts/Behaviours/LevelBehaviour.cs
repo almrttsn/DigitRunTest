@@ -12,7 +12,6 @@ public class LevelBehaviour : MonoBehaviour
     [SerializeField] private float _losePanelDelayTime;
 
     private GameManager _gameManager;
-
     private bool _isLevelEnded;
 
     public void Initialize(GameManager gameManager, bool isRestart = false)

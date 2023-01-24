@@ -1,19 +1,20 @@
 using DG.Tweening;
 using MangoramaStudio.Scripts.Data;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorBehaviour : MonoBehaviour
 {
-
     [SerializeField] private GameObject _doorPivot;
     [SerializeField] private int _initialDoorAmount;
     [SerializeField] private TextMesh _doorText;
     [SerializeField] private PlayerMovementBehaviour _playerMovementBehaviour;
+
     private bool _doorTriggeredOnce;
 
-    private void Start()
+    public void Initialize(InteractObjectsController interactObjectsController)
     {
         _doorText.text = _initialDoorAmount.ToString();
     }
@@ -34,4 +35,5 @@ public class DoorBehaviour : MonoBehaviour
             Debug.Log("Money is not enough to open this gate");
         }
     }
+
 }

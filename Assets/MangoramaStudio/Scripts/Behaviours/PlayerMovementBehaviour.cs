@@ -6,7 +6,9 @@ using UnityEngine;
 public class PlayerMovementBehaviour : MonoBehaviour
 {
     public bool PlayerMovementRestricted { get; set; }
+
     [SerializeField] private float _playerSpeed;
+
     private PlayerController _playerController;
 
     public void Initialize(PlayerController playerController)

@@ -6,11 +6,13 @@ using UnityEngine;
 public class MoneyBehaviour : MonoBehaviour
 {
     public static event Action<int> PlayerEarnMoney;
+
     [SerializeField] private int _initialMoneyAmount;
     [SerializeField] private TextMesh _moneyText;
+
     private int _currentMoneyAmount;
 
-    private void Start()
+    public void Initialize(InteractObjectsController interactObjectsController)
     {
         if (_initialMoneyAmount >= 0)
         {
@@ -47,4 +49,5 @@ public class MoneyBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

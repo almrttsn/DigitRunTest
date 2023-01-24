@@ -8,12 +8,14 @@ using UnityEngine.UI;
 public class FireRateGateScoreBehaviour : MonoBehaviour
 {
     public static event Action<int> FireRateUpdated;
+
     [SerializeField] private int _initialFireRateScore;
     [SerializeField] private TextMesh _fireRateText;
+
     private int _currentFireRate;
     private MeshRenderer _meshRenderer;
 
-    private void Start()
+    public void Initialize(InteractObjectsController interactObjectsController)
     {
         _meshRenderer = GetComponent<MeshRenderer>();
         if (_initialFireRateScore >= 0)

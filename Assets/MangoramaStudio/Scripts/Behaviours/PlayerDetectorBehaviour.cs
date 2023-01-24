@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PlayerDetectorBehaviour : MonoBehaviour
 {
     [SerializeField] private Animator _playerAnimator;
+
     private PlayerController _playerController;
     private int _moneyEarned;
     private int _fireRate;
