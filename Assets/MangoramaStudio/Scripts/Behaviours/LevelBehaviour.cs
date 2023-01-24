@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LevelBehaviour : MonoBehaviour
 {
+    public PlayerController PlayerController;
+    public InteractObjectsController InteractObjectsController;
     public float WinPanelDelayTime => _winPanelDelayTime;
     public float LosePanelDelayTime => _losePanelDelayTime;
 
@@ -17,7 +19,8 @@ public class LevelBehaviour : MonoBehaviour
     public void Initialize(GameManager gameManager, bool isRestart = false)
     {
         _gameManager = gameManager;
-
+        PlayerController.Initialize(gameManager);
+        InteractObjectsController.Initialize(gameManager);
         if (!isRestart)
         {
             _gameManager.EventManager.StartLevel();

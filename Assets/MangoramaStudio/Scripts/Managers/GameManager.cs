@@ -11,8 +11,7 @@ public class GameManager : BaseManager
     public EventManager EventManager;
     public LevelManager LevelManager;
     public AnalyticsManager AnalyticsManager;
-    public PlayerController PlayerController;
-    public InteractObjectsController InteractObjectsController;
+    
 
     public InputController Inputs;
 
@@ -27,8 +26,7 @@ public class GameManager : BaseManager
         UIManager.Initialize(this);
         LevelManager.Initialize(this);
         AnalyticsManager.Initialize(this);
-        PlayerController.Initialize(this);
-        InteractObjectsController.Initialize(this);
+        
 
 
         Inputs.Initialize(this);
