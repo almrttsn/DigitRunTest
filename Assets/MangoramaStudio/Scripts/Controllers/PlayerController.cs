@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,11 +15,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerMoneyDisplayBehaviour _playerMoneyDisplayBehaviour;
     [SerializeField] private PlayerMovementBehaviour _playerMovementBehaviour;
 
-    private void Start()
+    public void Initialize(GameManager gameManager)
     {
         PlayerDetectorBehaviour.Initialize(this);
         PlayerFireBehaviour.Initialize(this);
         PlayerMoneyDisplayBehaviour.Initialize(this);
-        PlayerMovementBehaviour.Initialize(this);        
+        PlayerMovementBehaviour.Initialize(this);
     }
 }
