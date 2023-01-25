@@ -7,25 +7,32 @@ using UnityEngine;
 
 public class DoorBehaviour : MonoBehaviour
 {
+    [SerializeField] private bool _doorOpeningToRight;
     [SerializeField] private GameObject _doorPivot;
     [SerializeField] private int _initialDoorAmount;
     [SerializeField] private TextMesh _doorText;
-    [SerializeField] private PlayerMovementBehaviour _playerMovementBehaviour;
+    private PlayerMovementBehaviour _playerMovementBehaviour;
 
     private bool _doorTriggeredOnce;
 
     public void Initialize(InteractObjectsController interactObjectsController)
     {
         _doorText.text = _initialDoorAmount.ToString();
+        _playerMovementBehaviour = FindObjectOfType<PlayerMovementBehaviour>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && PlayerData.Money > _initialDoorAmount)
         {
-            if (_doorTriggeredOnce == false)
+            if (_doorTriggeredOnce == false && _doorOpeningToRight == false)
             {
                 _doorPivot.transform.DORotate(new Vector3(0, -90f, 0), 1f);
+            }
+            else if(_doorTriggeredOnce == false && _doorOpeningToRight == true)
+            {
+                _doorPivot.transform.DORotate(new Vector3(0, 90f, 0), 1f);
+
             }
             _doorTriggeredOnce = true;
         }
