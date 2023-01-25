@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 546287969035366011}
   _initialDoorAmount: 270
@@ -223,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &546287969035366008
 Transform:
   m_ObjectHideFlags: 0
@@ -348,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 657881723210578023}
   _initialDoorAmount: 50
@@ -523,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 657881723616474821}
   _initialDoorAmount: 30
@@ -636,6 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 657881724938011831}
   _initialDoorAmount: 70
@@ -811,6 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 657881724813474167}
   _initialDoorAmount: 20
@@ -830,7 +835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1101893122833555757
 Transform:
   m_ObjectHideFlags: 0
@@ -955,6 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 1101893122833555758}
   _initialDoorAmount: 400
@@ -1259,7 +1265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2366889988133689669
 Transform:
   m_ObjectHideFlags: 0
@@ -1384,6 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 2366889988133689670}
   _initialDoorAmount: 620
@@ -1497,6 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 2956012120230147840}
   _initialDoorAmount: 90
@@ -1926,6 +1934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 4911089416429651868}
   _initialDoorAmount: 120
@@ -2101,6 +2110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 1
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 5353805883206178420}
   _initialDoorAmount: 190
@@ -2214,6 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 5493747683443803728}
   _initialDoorAmount: 200
@@ -2233,7 +2244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5493747683443803731
 Transform:
   m_ObjectHideFlags: 0
@@ -2973,6 +2984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 6908077010772051347}
   _initialDoorAmount: 350
@@ -2992,7 +3004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6908077010772051344
 Transform:
   m_ObjectHideFlags: 0
@@ -3148,6 +3160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 7042055843970641069}
   _initialDoorAmount: 150
@@ -3261,6 +3274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 1
   _doorPivot: {fileID: 7951692948541321318}
   _initialDoorAmount: 550
@@ -3280,7 +3294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7951692948541321317
 Transform:
   m_ObjectHideFlags: 0
@@ -3311,7 +3325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8242155685284491628
 Transform:
   m_ObjectHideFlags: 0
@@ -3436,6 +3450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdabba955aa6d54282c266ef69bdae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsThisLastDoor: 0
   _doorOpeningToRight: 0
   _doorPivot: {fileID: 8242155685284491631}
   _initialDoorAmount: 430
