@@ -26,6 +26,7 @@ public class PlayerDetectorBehaviour : MonoBehaviour
     private void IsPlayerReachedEndTrigger()
     {
         _playerController.PlayerFireBehaviour.PlayerAllowedToFire = false;
+        _playerController.PlayerMovementBehaviour.PlayerSpeed = 15f;
     }
 
     private void IsRangeUpdated(int range)
