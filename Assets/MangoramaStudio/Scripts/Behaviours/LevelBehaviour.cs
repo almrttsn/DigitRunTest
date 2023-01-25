@@ -19,12 +19,36 @@ public class LevelBehaviour : MonoBehaviour
     public void Initialize(GameManager gameManager, bool isRestart = false)
     {
         _gameManager = gameManager;
+        //PlayerPrefs.DeleteAll();
         PlayerController.Initialize(gameManager);
         InteractObjectsController.Initialize(gameManager);
+        foreach (var door in InteractObjectsController.DoorBehaviourList)
+        {
+            door.MoneyIsNotEnough += IsMoneyNotEnough;
+        }
+        foreach (var door in InteractObjectsController.DoorBehaviourList)
+        {
+            door.AllDoorsOpened += AreAllDoorsOpened;
+        }
+
+        InteractObjectsController.AllDoorsOpened += AreAllDoorsOpened;
+        
         if (!isRestart)
         {
             _gameManager.EventManager.StartLevel();
         }
+    }
+
+    private void AreAllDoorsOpened(int playerMoney)
+    {
+        LevelCompleted();
+        Debug.Log("Level completed, your money is:" + playerMoney + "$");
+    }
+
+    private void IsMoneyNotEnough(int playerMoney)
+    {
+        LevelFailed();
+        Debug.Log("Your money is not enough, you have: " + playerMoney + "$");
     }
 
     private void Update()
@@ -42,7 +66,11 @@ public class LevelBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        foreach (var door in InteractObjectsController.DoorBehaviourList)
+        {
+            door.MoneyIsNotEnough -= IsMoneyNotEnough;
+        }
+        InteractObjectsController.AllDoorsOpened -= AreAllDoorsOpened;
     }
 
     private void LevelCompleted()
@@ -62,4 +90,6 @@ public class LevelBehaviour : MonoBehaviour
         InputController.IsInputDeactivated = true;
         _isLevelEnded = true;
     }
+
+    
 }
